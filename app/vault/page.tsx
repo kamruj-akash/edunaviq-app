@@ -24,11 +24,72 @@ import { motion, AnimatePresence } from "framer-motion"
 
 interface VaultPageProps {
   onHomeClick: () => void
-  documents: any[]
-  onDocumentAdd: (document: any) => void
 }
 
-export default function VaultPage({ onHomeClick, documents, onDocumentAdd }: VaultPageProps) {
+const initialDocuments = [
+    {
+      id: 1,
+      icon: FileText,
+      title: "Passport",
+      status: "Expires in 2 years",
+      progress: 80,
+      progressColor: "bg-blue-500",
+      bgColor: "bg-blue-100",
+      iconColor: "text-blue-600",
+      image: "/placeholder.svg?height=40&width=60",
+      uploadDate: "2023-01-15",
+      fileSize: "2.4 MB",
+      fileType: "PDF",
+    },
+    {
+      id: 2,
+      icon: FileText,
+      title: "Student Visa",
+      status: "Expires in 1 year",
+      progress: 60,
+      progressColor: "bg-green-500",
+      bgColor: "bg-green-100",
+      iconColor: "text-green-600",
+      image: "/placeholder.svg?height=40&width=60",
+      uploadDate: "2023-02-20",
+      fileSize: "1.8 MB",
+      fileType: "PDF",
+    },
+    {
+      id: 3,
+      icon: FileText,
+      title: "Confirmation of Enrollment",
+      status: "Expires in 6 months",
+      statusColor: "text-red-500",
+      progress: 20,
+      progressColor: "bg-red-500",
+      bgColor: "bg-red-100",
+      iconColor: "text-red-600",
+      image: "/placeholder.svg?height=40&width=60",
+      isExpiring: true,
+      uploadDate: "2023-03-10",
+      fileSize: "1.2 MB",
+      fileType: "PDF",
+    },
+    {
+      id: 4,
+      icon: FileText,
+      title: "Resume",
+      status: "Up to date",
+      statusColor: "text-green-500",
+      progress: 100,
+      progressColor: "bg-green-500",
+      bgColor: "bg-purple-100",
+      iconColor: "text-purple-600",
+      image: "/placeholder.svg?height=40&width=60",
+      uploadDate: "2023-04-05",
+      fileSize: "856 KB",
+      fileType: "PDF",
+    },
+  ]
+
+export default function VaultPage({ onHomeClick }: VaultPageProps) {
+  const [documents, setDocuments] = useState(initialDocuments);
   const [showUploadModal, setShowUploadModal] = useState(false)
   const [showDocumentDetail, setShowDocumentDetail] = useState(false)
   const [selectedDocument, setSelectedDocument] = useState<any>(null)
@@ -79,6 +140,10 @@ export default function VaultPage({ onHomeClick, documents, onDocumentAdd }: Vau
       setUploadedFile(file)
     }
   }
+
+  const onDocumentAdd = (newDocument: any) => {
+    setDocuments((prev) => [...prev, { ...newDocument, id: Date.now() }]);
+  };
 
   const handleDocumentSubmit = () => {
     if (selectedDocType && uploadedFile) {
