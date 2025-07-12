@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png" width="85" alt="EduNaviQ-Ai Logo" />
   <h1>EduNaviQ-App 🚀</h1>
   <p>
     <b>Smarter Study. Simpler Life.</b><br/>
@@ -71,8 +70,8 @@ API keys or endpoints: /lib/ or /app/api/
 
 ## 📞 Contact & Credits
 
-Developed by <a href="https://github.com/kamruj-akash">KAmruj AKash</a>
+Developed by <a href="https://github.com/kamruj-akash">KAmruj AKash</a>  <br/> 
 Email: <a href="mailto:source.akash@gmail.com">source.akash@gmail.com</a>
 
 
-<div align="center"> <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png" width="40" /><br/> <i>“Let AI guide your education journey.”</i><br/><br/> <img src="https://img.shields.io/badge/Made%20with%20AI-%F0%9F%A4%96-1978e5?style=flat-square" /> </div> 
+<div align="center"> <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png" width="40" /><br/> <i>“Let AI guide your education journey.”</i><br/><br/> </div> 
